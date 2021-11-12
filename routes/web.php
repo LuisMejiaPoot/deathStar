@@ -25,4 +25,5 @@ $router->group(['prefix' => 'api/v1/'], function () use ($router) {
     $router->put('Jedis','JedisController@updateJedi');
     $router->delete('Jedis','JedisController@deleteJedi');
     // $router->delete('Jedis','JedisController@updateCustomers');
+    $router->post('monedas','JedisController@calcularMonedas');
 });

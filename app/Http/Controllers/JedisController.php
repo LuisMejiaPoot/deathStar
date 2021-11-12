@@ -116,6 +116,20 @@ class JedisController extends Controller
         }
     }
 
+    public function calcularMonedas(Request $request)
+    {
+        $monto =  $request->monto;
+        $monedas = ["20"=>20,"10"=>10,"5"=>5,"1"=>1];
+
+        $resultado = [];
+        foreach ($monedas as $key =>  $nominacion) {
+
+        $resultado[$key] = intval ($monto / $nominacion); 
+        $monto  =  intval($monto  % $nominacion);
+        }
+        return $resultado;
+    }
+
 
     //
 }
